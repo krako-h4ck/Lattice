@@ -13,7 +13,7 @@ def gram_schmidt(ordered_basis):
         for j in range(i):
             coef = inner_product(ordered_basis[i], gso_vectors[j]) / inner_product(gso_vectors[j], gso_vectors[j])
             gso_coefficients[i][j] = coef
-            gso_vectors[i] = [x-y for x,y in zip(gso_vectors[i], mult_list(gso_vectors[j], coef))]
+            gso_vectors[i] = [x-y for x,y in zip(gso_vectors[i], mult_list(coef, gso_vectors[j]))]
 
     return gso_vectors, gso_coefficients
 

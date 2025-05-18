@@ -14,7 +14,7 @@ def lagrange_basis_reduction(ordered_basis):
     # Pythonにdo while文は無いので代用
     while True:
         q = - round(inner_product(b1, b2)/(norm(b1)**2))
-        v = add_list(b2, mult_list(b1, q))
+        v = add_list(b2, mult_list(q, b1))
         b2, b1 = b1, v
 
         if norm(b1) >= norm(b2):
