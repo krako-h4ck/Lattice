@@ -1,14 +1,4 @@
-def inner_product(l1, l2):
-    return sum(x*y for x,y in zip(l1, l2))
-
-def norm(l):
-    return pow(sum(x**2 for x in l), 0.5)
-
-def mult_list(l, x):
-    return [x*y for y in l]
-
-def add_list(l1, l2):
-    return [x+y for x,y in zip(l1, l2)]
+from utils import *
 
 def lagrange_basis_reduction(ordered_basis):
     # ラグランジュ基底簡約は2次元格子に対するアルゴリズムであるため、2次元格子以外を受け付けない
@@ -26,9 +16,6 @@ def lagrange_basis_reduction(ordered_basis):
         q = - round(inner_product(b1, b2)/(norm(b1)**2))
         v = add_list(b2, mult_list(b1, q))
         b2, b1 = b1, v
-        
-        print(q)
-        print(v)
 
         if norm(b1) >= norm(b2):
             break

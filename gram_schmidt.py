@@ -1,8 +1,4 @@
-def inner_product(l1, l2):
-    return sum(x*y for x,y in zip(l1, l2))
-
-def mult_list(l, x):
-    return [x*y for y in l]
+from utils import *
 
 def gram_schmidt(ordered_basis):
     n = len(ordered_basis)
